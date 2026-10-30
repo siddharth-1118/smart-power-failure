@@ -1,0 +1,3 @@
+@echo off
+echo Opening VCD Waveforms in GTKWave...
+wsl -d Ubuntu-22.04 bash -c "gtkwave /mnt/e/projects/'smart power failure'/sim/power_sag_dump.vcd 2>/dev/null || which gtkwave || sudo apt-get install -y --no-install-recommends gtkwave && gtkwave /mnt/e/projects/'smart power failure'/sim/power_sag_dump.vcd"

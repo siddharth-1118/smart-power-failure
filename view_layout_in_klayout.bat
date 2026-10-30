@@ -1,0 +1,3 @@
+@echo off
+echo Opening GDSII Tapeout Layout in KLayout...
+wsl -d Ubuntu-22.04 bash -c "klayout /mnt/e/projects/'smart power failure'/gds/spf_predictor_tapeout.gds"

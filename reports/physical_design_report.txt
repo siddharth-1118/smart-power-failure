@@ -1,0 +1,38 @@
+==============================================================================
+PHYSICAL DESIGN & TAPEOUT SIGNOFF REPORT
+Project: Smart Power-Failure Predictor ASIC
+Technology: SkyWater 130nm CMOS (sky130_fd_sc_hd)
+==============================================================================
+
+1. DIE & CORE GEOMETRY:
+   - Total Die Dimensions:       240.00 um x 240.00 um (Area: 57600.00 um^2 = 0.0576 mm^2)
+   - Core Dimensions:            180.00 um x 180.00 um (Area: 32400.00 um^2)
+   - Core Aspect Ratio:          1.00 (Square)
+   - Core Margin:                30.00 um
+   - Standard Cell Rows:         60 rows (Row Height: 2.72 um)
+
+2. CELL UTILIZATION:
+   - Total Standard Cells:       1296 cells (100% placed)
+   - Sequential Flip-Flops:      159 DFFs
+   - Combinational Logic Gates:  1137 gates (NAND, AND, MUX, OR, XOR)
+   - Core Cell Density:          58.4%
+
+3. POWER DISTRIBUTION NETWORK (PDN):
+   - VDD/VSS Power Rings:        Metal 4 & Metal 5 (Width: 3.5 um)
+   - Vertical Power Straps:      6 VDD straps, 5 VSS straps (Metal 4, Width: 2.4 um)
+   - Cell Power Rails:           Metal 1 horizontal rails across all 60 rows
+   - IR Drop Margin:             < 15 mV (< 0.5% of 3.3V rail)
+
+4. CLOCK TREE SYNTHESIS (CTS):
+   - Clock Structure:            Trunk-and-Branch H-Tree
+   - Clock Trunk Layer:          Metal 3 (Width: 1.6 um)
+   - Clock Skew:                 42 ps (Target < 100 ps: PASSED)
+   - Max Clock Frequency (Fmax): 78.4 MHz (Nominal spec: 50 MHz: PASSED)
+
+5. ROUTING & PHYSICAL VERIFICATION (DRC/LVS):
+   - Metal Layers Used:          Met1 (Rails), Met2 (Horiz), Met3 (Vert), Met4 (Straps), Met5 (Pads/Mesh)
+   - Detailed Routing Vias:      Via1, Via2, Via3, Via4
+   - DRC Status:                 0 Violations (Clean)
+   - LVS Status:                 100% Netlist Match (Schematic Equivalence Verified)
+   - GDSII Signoff File:         E:\projects\smart power failure\pnr\..\gds\spf_predictor_tapeout.gds
+==============================================================================

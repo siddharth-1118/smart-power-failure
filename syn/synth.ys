@@ -1,0 +1,39 @@
+# ============================================================================
+# Yosys Logic Synthesis Script for Smart Power-Failure Predictor ASIC
+# ============================================================================
+
+# Step 1: Read Verilog RTL Source Files
+read_verilog -I rtl rtl/spf_defines.vh
+read_verilog -I rtl rtl/spf_reg_bank.v
+read_verilog -I rtl rtl/spf_trend_engine.v
+read_verilog -I rtl rtl/spf_slope_calc.v
+read_verilog -I rtl rtl/spf_fsm.v
+read_verilog -I rtl rtl/spf_predictor_top.v
+
+# Step 2: Elaborate Hierarchy & Check Connectivity
+hierarchy -check -top spf_predictor_top
+
+# Step 3: High-Level RTL Synthesis & Optimization
+proc
+opt
+fsm
+opt
+memory
+opt
+
+# Step 4: Logic Synthesis & Flattening
+synth -top spf_predictor_top -flatten
+
+# Step 5: Technology Mapping to Standard Cell Gates (ABC)
+abc -g AND,NAND,OR,NOR,XOR,XNOR,MUX
+opt_clean -purge
+
+# Step 6: Design Rule & Connectivity Audit
+check
+
+# Step 7: Output Statistics & Reports
+stat
+
+# Step 8: Write Gate-Level Netlist & JSON
+write_verilog -noattr syn/spf_synth_netlist.v
+write_json syn/spf_synth.json

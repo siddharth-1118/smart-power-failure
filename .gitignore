@@ -1,0 +1,13 @@
+# Ignore large unrelated binaries
+*.apk
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary editor files
+*.swp
+*~
+.DS_Store
+Thumbs.db
