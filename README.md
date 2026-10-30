@@ -41,6 +41,7 @@ E:\projects\smart power failure\
 │   └── physical_design_report.txt# Floorplan, CTS, PDN & DRC summary
 │
 ├── Smart_Power_Failure_Predictor_ASIC_Final_Lab_Report.pdf  # Final Academic PDF Report
+├── Smart_Power_Failure_Predictor_ASIC_Review1.pptx           # Project Review 1 Presentation (Novelty & Architecture)
 ├── run_full_flow.bat             # 1-Click execution script for entire flow
 ├── view_layout_in_klayout.bat    # 1-Click script to launch KLayout GUI
 └── view_waveforms_in_gtkwave.bat # 1-Click script to open waveforms in GTKWave
